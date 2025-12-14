@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bim7igp3koklm"]
+
+[ext_resource type="Script" uid="uid://c5c24xtgyp2mq" path="res://scenes/game/game.gd" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://baqu11b1cew1a" path="res://scenes/tappy_plane/tappy_plane.tscn" id="3_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://cdkl5l405hncx" path="res://scenes/barrier/barrier.tscn" id="3_kelw5"]
+[ext_resource type="PackedScene" uid="uid://h8mdkwmshi23" path="res://scenes/pipes/pipes.tscn" id="4_kelw5"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_sul5r")
+
+[node name="TappyPlane" parent="." instance=ExtResource("3_0sr1o")]
+position = Vector2(73, 368)
+
+[node name="Barrier" parent="." instance=ExtResource("3_kelw5")]
+
+[node name="Pipes" parent="." instance=ExtResource("4_kelw5")]
+position = Vector2(354, 491)

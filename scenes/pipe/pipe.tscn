@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://clqlj0ou0veoa"]
+
+[ext_resource type="Texture2D" uid="uid://umb3db1p14nm" path="res://assets/pipes/pipe.png" id="1_3x1uc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvrno"]
+size = Vector2(67.5, 558.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3bcf"]
+size = Vector2(46, 40)
+
+[node name="Pipe" type="Area2D"]
+
+[node name="PipeSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_3x1uc")
+centered = false
+offset = Vector2(-35, 0)
+
+[node name="PipeCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 350.375)
+shape = SubResource("RectangleShape2D_rvrno")
+
+[node name="PipeCollisionShape2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 38)
+shape = SubResource("RectangleShape2D_w3bcf")
