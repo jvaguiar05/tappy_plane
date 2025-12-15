@@ -25,3 +25,13 @@ func _on_screen_notifier_screen_exited() -> void:
 # Fallback: If the event is not triggered, the timer forces the removal of the pipes
 func _on_life_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is TappyPlane:
+		body.die()
+
+
+func _on_laser_body_exited(body: Node2D) -> void:
+	if body is TappyPlane:
+		print("Point Scored!")

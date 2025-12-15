@@ -29,6 +29,11 @@ power={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="barrier"
+2d_physics/layer_2="tappy_plane"
+
 [rendering]
 
 renderer/rendering_method="mobile"

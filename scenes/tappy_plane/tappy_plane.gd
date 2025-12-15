@@ -17,8 +17,8 @@ var _jumped := false
 
 # Stop physics processing, stop plane animation, etc.
 func die() -> void:
-	set_physics_process(false)
-	plane_sprite.stop()
+	get_tree().paused = true
+	print("Game Over!")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,8 +33,8 @@ func _physics_process(delta: float) -> void:
 	if _jumped:
 		velocity.y = JUMP_POWER
 		_jumped = false
-		
+
+	move_and_slide()
+
 	if is_on_floor():
 		die()
-	
-	move_and_slide()
