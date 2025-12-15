@@ -13,3 +13,6 @@ rotation = 3.1415927
 
 [node name="Lower" parent="." instance=ExtResource("2_dq6nu")]
 position = Vector2(0, 80)
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(173, 0)
