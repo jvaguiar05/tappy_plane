@@ -8,6 +8,7 @@ const PIPES = preload("uid://h8mdkwmshi23")
 @onready var pipes_holder: Node = $PipesHolder
 @onready var upper_spawn: Marker2D = $UpperSpawn
 @onready var lower_spawn: Marker2D = $LowerSpawn
+@onready var game_ui: GameUI = $CanvasLayer/GameUI
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -35,3 +36,7 @@ func spawn_pipes() -> void:
 		y_position
 	)
 	pipes_holder.add_child(new_pipes)
+
+
+func _on_tappy_plane_on_plane_died() -> void:
+	game_ui.on_plane_died()

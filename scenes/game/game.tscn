@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bim7igp3koklm"]
+[gd_scene load_steps=6 format=3 uid="uid://bim7igp3koklm"]
 
 [ext_resource type="Script" uid="uid://c5c24xtgyp2mq" path="res://scenes/game/game.gd" id="1_sul5r"]
+[ext_resource type="Texture2D" uid="uid://dmatma3wh0f3s" path="res://assets/background/rocks_2.png" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://baqu11b1cew1a" path="res://scenes/tappy_plane/tappy_plane.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://cdkl5l405hncx" path="res://scenes/barrier/barrier.tscn" id="3_kelw5"]
 [ext_resource type="PackedScene" uid="uid://l4enlwyyo2yu" path="res://scenes/game_ui/game_ui.tscn" id="4_kelw5"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_sul5r")
+
+[node name="Rocks2" type="Sprite2D" parent="."]
+position = Vector2(443, 379)
+texture = ExtResource("2_7h61r")
 
 [node name="TappyPlane" parent="." instance=ExtResource("3_0sr1o")]
 position = Vector2(73, 368)
@@ -25,6 +30,9 @@ position = Vector2(530, 550)
 wait_time = 1.5
 autostart = true
 
-[node name="GameUI" parent="." instance=ExtResource("4_kelw5")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="GameUI" parent="CanvasLayer" instance=ExtResource("4_kelw5")]
+
+[connection signal="on_plane_died" from="TappyPlane" to="." method="_on_tappy_plane_on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
