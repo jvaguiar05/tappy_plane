@@ -25,5 +25,10 @@ func _on_timer_timeout() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = false
+		GameManager.load_main_scene()
+
 	if press_space_label.visible and event.is_action_pressed("power"):
+		get_tree().paused = false
 		GameManager.load_main_scene()
