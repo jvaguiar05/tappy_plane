@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+class_name TappyPlane
+
+
 const JUMP_POWER := -400.0
 
 
