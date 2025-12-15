@@ -22,3 +22,8 @@ func on_plane_died() -> void:
 func _on_timer_timeout() -> void:
 	game_over_label.hide()
 	press_space_label.show()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if press_space_label.visible and event.is_action_pressed("power"):
+		GameManager.load_main_scene()
