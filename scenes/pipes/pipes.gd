@@ -4,6 +4,9 @@ extends Node2D
 class_name Pipes
 
 
+@onready var score_sound: AudioStreamPlayer = $ScoreSound
+
+
 @export var speed: float = 120.0
 
 
@@ -34,4 +37,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_laser_body_exited(body: Node2D) -> void:
 	if body is TappyPlane:
-		print("Point Scored!")
+		score_sound.play()
