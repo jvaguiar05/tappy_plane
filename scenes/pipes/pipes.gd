@@ -14,7 +14,6 @@ class_name Pipes
 func _ready() -> void:
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	# Move pipes from right to left
@@ -38,3 +37,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_laser_body_exited(body: Node2D) -> void:
 	if body is TappyPlane:
 		score_sound.play()
+		SignalHub.emit_on_point_scored()
