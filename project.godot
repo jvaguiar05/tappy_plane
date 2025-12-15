@@ -15,6 +15,10 @@ config/tags=PackedStringArray("projects")
 run/main_scene="uid://bim7igp3koklm"
 config/features=PackedStringArray("4.5", "Mobile")
 
+[autoload]
+
+GameManager="*res://globals/game_manager.gd"
+
 [display]
 
 window/size/viewport_width=480
