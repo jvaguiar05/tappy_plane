@@ -34,5 +34,4 @@ autostart = true
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("4_kelw5")]
 
-[connection signal="on_plane_died" from="TappyPlane" to="." method="_on_tappy_plane_on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

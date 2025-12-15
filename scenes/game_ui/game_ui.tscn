@@ -67,4 +67,13 @@ text = "PRESSS SPACE"
 label_settings = SubResource("LabelSettings_2cwxn")
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("3_najyh")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
