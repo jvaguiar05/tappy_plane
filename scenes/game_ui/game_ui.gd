@@ -18,6 +18,7 @@ func on_plane_died() -> void:
 	game_over_label.show()
 	sound.play()
 	timer.start()
+	ScoreManager.high_score = _points
 
 
 func on_game_restart() -> void:
