@@ -5,11 +5,16 @@ extends Node
 const MAIN = preload("uid://dog4mv1bwmrsy")
 # res://scenes/game/game.tscn
 const GAME = preload("uid://bim7igp3koklm")
-# res://scenes/changes/simple_change.tscn
-const SIMPLE_CHANGE = preload("uid://b6gs0y7l2gbcj")
+# res://scenes/transitions/complex_change.tscn
+const COMPLEX_CHANGE = preload("uid://cuvqtqw0j27fg")
 
 
 var next_scene: PackedScene
+var cx: ComplexChange
+
+func _ready() -> void:
+	cx = COMPLEX_CHANGE.instantiate()
+	add_child(cx)
 
 
 func change_to_next() -> void:
@@ -17,11 +22,14 @@ func change_to_next() -> void:
 		get_tree().change_scene_to_packed(next_scene)
 
 
+func start_transition(to_scene: PackedScene) -> void:
+	next_scene = to_scene
+	cx.play_animation()
+
+
 func load_main_scene() -> void:
-	next_scene = MAIN
-	get_tree().change_scene_to_packed(SIMPLE_CHANGE)
+	start_transition(MAIN)
 
 
 func load_game_scene() -> void:
-	next_scene = GAME
-	get_tree().change_scene_to_packed(SIMPLE_CHANGE)
+	start_transition(GAME)
